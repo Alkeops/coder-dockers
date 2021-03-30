@@ -3,7 +3,7 @@ version: "3"
 services:
   mongo-express:
     image: mongo-express
-    container-name: mongo-express
+    container_name: mongo-express
     ports:
       - 8081:8081
     environment:
@@ -19,7 +19,7 @@ services:
 
   mongo:
     image: mongo
-    container-name: mongodb
+    container_name: mongodb
     environment:
       MONGO_INITDB_ROOT_USERNAME: admin
       MONGO_INITDB_ROOT_PASSWORD: admin

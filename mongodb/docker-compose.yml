@@ -15,8 +15,7 @@ services:
     links:
       - mongo
     networks:
-      - mongo-compose-network
-
+      - back-coder-network
   mongo:
     image: mongo
     container_name: mongodb
@@ -29,8 +28,15 @@ services:
       - /home/alkeops/Programacion/Coder/Dockers/mongodb/data:/data/db
       - /home/alkeops/Programacion/Coder/Dockers/mongodb/config:/data/configdb
     networks:
-      - mongo-compose-network
+      - back-coder-network
+  redis: 
+    image: redis
+    container_name: redis-coder
+    ports:
+      - "6379:6379"
+    networks:
+      - back-coder-network
 
 networks:
-  mongo-compose-network:
+  back-coder-network:
     driver: bridge
